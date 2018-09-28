@@ -1,0 +1,13 @@
+name: tvrename
+version: 1.0.0
+
+authors:
+  - guille <guille10000@gmail.com>
+
+targets:
+  rename:
+    main: src/tvrename/rename.cr
+
+crystal: 0.26.1
+
+license: MIT
