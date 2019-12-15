@@ -32,7 +32,7 @@ module TVRename
 			/.+\-? \d+x\d+/,         # showname - 01x02
 			/.+\d{3,}+/              # showname.102
 		)
-		
+
 		# Removes everything after the match
 		found = entry.match(patterns)
 
@@ -44,10 +44,10 @@ module TVRename
 		                .gsub(/s(\d)/, "S\\1")  # Upcase the season marker
 		                .gsub(/ [sS]?(\d+)[exX](\d+)$/, " S\\1e\\2")
 		# Insert a season marker if it didn't exist, change x/X for e
-		
+
 		raise PossibleConflictError.new(entry) if found.match(/\d{3,}+.+\d{3,}+/)
 		# Possible conflict: showname.308.test.121.ext
-		
+
 		# Upcase tv show name
 		found = found.split(" ")
 		             .map(&.capitalize)
@@ -60,7 +60,7 @@ module TVRename
 			if !numbers.nil?
 				# Assumes most tv shows have 1-99 seasons
 				# First half of the number is season, rest is episode number
-				divide = numbers[0].size/2
+				divide = numbers[0].size//2
 				season = numbers[0][0..divide - 1]
 				# Pad season number with a zero if single digit
 				season = season.insert(0, "0") if season.size == 1
