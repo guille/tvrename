@@ -19,7 +19,7 @@ module TVRename
 			File.rename(entry, File.join(base, found))
 		end
 
-	rescue e : Errno
+	rescue e : File::NotFoundError
 		STDERR.puts "Directory not found: #{e.message}"
 	end
 
