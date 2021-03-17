@@ -2,7 +2,6 @@ require "./spec_helper"
 require "file_utils"
 
 describe TVRename do
-  
   Spec.before_each do
     Dir.mkdir_p(TestUtils.rename_dir)
   end
@@ -58,8 +57,15 @@ describe TVRename do
     end
 
     it "7 - formats tv show XxXX encoder.ext" do
-      input = "tv show 2x01 - titles 101.ext"
-      output = "Tv Show S02E01.ext"
+      input = "tv show 2x07 - titles 107.ext"
+      output = "Tv Show S02E07.ext"
+
+      TestUtils.test_rename_helper(input, output)
+    end
+
+    it "8 - formats tv show sxxxx encoder.ext" do
+      input = "tv show s1208 random stuff.ext"
+      output = "Tv Show S12E08.ext"
 
       TestUtils.test_rename_helper(input, output)
     end
