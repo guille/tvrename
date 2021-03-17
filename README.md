@@ -1,6 +1,6 @@
 # tvrename
 
-[![Build Status](https://travis-ci.org/guille/tvrename.svg?branch=master)](https://travis-ci.org/guille/tvrename)
+![Build Status](https://github.com/guille/tvrename/actions/workflows/crystal.yml/badge.svg)
 
 Crystal command line utility that standardises filenames matching certain patterns. It is meant to support the most usual TV show episode filenames found online.
 
