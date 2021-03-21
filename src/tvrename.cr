@@ -68,11 +68,9 @@ module TVRename
         found = found.gsub(/SS/, "S")
       end
     end
-    puts found
 
     # Pad season marker with a zero if number following is < 10
     found = found.gsub(/S(\d)E/, "S0\\1E")
-    puts found
 
     return found
   end
