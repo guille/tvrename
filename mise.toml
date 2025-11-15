@@ -1,0 +1,8 @@
+[tasks.install]
+description = "Install the compiled binary to PATH"
+depends = ['build']
+run = "cp bin/rename $HOME/.local/bin/rn"
+
+[tasks.build]
+description = "Builds binary"
+run = "shards build"
